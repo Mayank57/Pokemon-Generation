@@ -84,7 +84,6 @@ def define_discriminator(in_shape=(128,128,3)):
   model.add(LeakyReLU(alpha=0.2))
   model.add(Dropout(0.25))
   model.add(Flatten())
-  model.add(Dense(100))
   model.add(Dense(1, activation='sigmoid'))
   opt = Adam(lr=0.0002, beta_1=0.5)
   model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['accuracy'])
