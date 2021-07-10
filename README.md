@@ -29,7 +29,6 @@ The network structure for the discriminator is given by:
 | convolution      | batch size, 8, 8, 256 | LRelu |
 | convolution      | batch size, 4, 4, 512 | LRelu |
 | flatten     | batch size, 8192 | LRelu |
-| dense      | batch size, 100 | |
 | dense      | batch size, 1 | Sigmoid |
 
 </center>
