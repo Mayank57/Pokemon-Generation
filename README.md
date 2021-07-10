@@ -29,7 +29,7 @@ The network structure for the discriminator is given by:
 | convolution      | batch size, 8, 8, 256 | LRelu |
 | convolution      | batch size, 4, 4, 512 | LRelu |
 | flatten     | batch size, 8192 | LRelu |
-| dense      | batch size, 100 | Sigmoid |
+| dense      | batch size, 100 | |
 | dense      | batch size, 1 | Sigmoid |
 
 </center>
@@ -46,12 +46,14 @@ The network structure for the generator is given by:
 | Layer        | Shape           | Activation           |
 | ------------- |:-------------:|:-------------:|
 | input     | batch size, 100 (Noise from uniform distribution) | |
-| reshape layer      | batch size, 100, 1, 1  | Relu |
-| deconvolution      | batch size, 512, 4, 4   |Relu | 
-| deconvolution      | batch size, 256, 8, 8  | Relu |
-| deconvolution      | batch size, 128, 16, 16 | Relu |
-| deconvolution      | batch size, 64, 32, 32 | Relu |
-| deconvolution      | batch size, 3, 64, 64 | Tanh |
+| dense     | batch size, 4*4*512 | |
+| reshape layer      | batch size, 4, 4, 512  | LRelu |
+| deconvolution      | batch size, 8, 8, 256   |LRelu | 
+| deconvolution      | batch size, 16, 16, 128  | LRelu |
+| deconvolution      | batch size, 32, 32, 64 | LRelu |
+| deconvolution      | batch size, 64, 64, 32 | LRelu |
+| deconvolution      | batch size, 128, 128, 16 | LRelu |
+| deconvolution      | batch size, 128, 128, 3 | Sigmoid |
 
 </center>
 
@@ -63,7 +65,6 @@ The hyperparameter for DCGAN architecture is given in the table below:
 | Hyperparameter        |
 | ------------- |
 | Mini-batch size of 64     |
-| Weight initialize from normal distribution with std = 0.02      |  
 | LRelu slope = 0.2      |
 | Adam Optimizer with learning rate = 0.0002 and momentum = 0.5      |
 
