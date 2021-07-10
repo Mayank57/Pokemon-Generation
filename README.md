@@ -45,7 +45,7 @@ The network structure for the generator is given by:
 | Layer        | Shape           | Activation           |
 | ------------- |:-------------:|:-------------:|
 | input     | batch size, 100 (Noise from uniform distribution) | |
-| dense     | batch size, 4*4*512 | |
+| dense     | batch size, 8192 | |
 | reshape layer      | batch size, 4, 4, 512  | LRelu |
 | deconvolution      | batch size, 8, 8, 256   |LRelu | 
 | deconvolution      | batch size, 16, 16, 128  | LRelu |
