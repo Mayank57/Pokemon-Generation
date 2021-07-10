@@ -68,7 +68,9 @@ The hyperparameter for DCGAN architecture is given in the table below:
 | Adam Optimizer with learning rate = 0.0002 and momentum = 0.5      |
 
 </center>
+
 ## References
+
 * https://www.oreilly.com/learning/generative-adversarial-networks-for-beginners
 * https://www.analyticsvidhya.com/blog/2017/06/introductory-generative-adversarial-networks-gans/
 * https://www.coursera.org/specializations/generative-adversarial-networks-gans
